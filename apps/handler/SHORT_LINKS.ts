@@ -10,7 +10,7 @@ export const SHORT_LINKS = Object.freeze([
 
 	{
 		_id: 'horario_pdf',
-		destination: 'https://www.carrismetropolitana.pt/lines/:line',
+		destination: 'https://www.carrismetropolitana.pt/lines/:line/?active_waypoint_stop_id=:stop',
 		path: '/horarios/:line/:direction/:stop',
 	},
 

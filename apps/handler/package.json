@@ -1,0 +1,30 @@
+{
+	"name": "@carrismetropolitana/switch-handler",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"build": "next build",
+		"dev": "next dev -p 3003",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix && npx stylelint '**/*.{css,scss}' --fix",
+		"start": "next start"
+	},
+	"dependencies": {
+		"@amplitude/analytics-browser": "2.13.3",
+		"@tabler/icons-react": "3.31.0",
+		"next": "15.3.0",
+		"react": "19.1.0",
+		"react-dom": "19.1.0"
+	},
+	"devDependencies": {
+		"@carrismetropolitana/eslint": "20250325.1926.5",
+		"@types/node": "22.14.1",
+		"@types/react": "19.1.2",
+		"@types/react-dom": "19.1.2",
+		"typescript": "5.8.3"
+	},
+	"overrides": {
+		"react": "19.1.0",
+		"react-dom": "19.1.0"
+	}
+}

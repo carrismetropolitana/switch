@@ -1,5 +1,10 @@
 /* * */
 
+/* QR CODE GENERATOR: */
+/* https://qrplanet.com/qr-code-generator-svg */
+
+/* * */
+
 export const SHORT_LINKS = Object.freeze([
 
 	{
@@ -17,7 +22,7 @@ export const SHORT_LINKS = Object.freeze([
 	{
 		_id: 'campanha_contactos',
 		destination: 'https://www.carrismetropolitana.pt/news/1234',
-		path: '/campanha-contactos/',
+		path: '/campanha-contactos',
 	},
 
 ]);

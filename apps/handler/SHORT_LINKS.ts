@@ -14,4 +14,10 @@ export const SHORT_LINKS = Object.freeze([
 		path: '/horarios/:line/:direction/:stop',
 	},
 
+	{
+		_id: 'campanha_contactos',
+		destination: 'https://www.carrismetropolitana.pt/news/1234',
+		path: '/campanha-contactos/',
+	},
+
 ]);

@@ -3,7 +3,7 @@
 /* * */
 
 import pjson from '@/package.json';
-import { SHORT_LINKS } from '@/SHORT_LINKS.js';
+import { SHORT_LINKS } from '@/SHORT_LINKS';
 import { ampli } from 'amplitude';
 import { Loader } from 'components/Loader';
 import { useEffect, useMemo } from 'react';

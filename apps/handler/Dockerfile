@@ -30,9 +30,6 @@ RUN turbo prune --scope=@carrismetropolitana/switch-${PROJECT} --docker
 
 FROM base AS builder
 
-RUN apk add --no-cache libc6-compat
-RUN apk update
-
 WORKDIR /app
 
 COPY --from=pruner /app/out/json/ .

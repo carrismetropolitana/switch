@@ -50,6 +50,9 @@ function replaceParams(template: string, params: Record<string, string>) {
 export default function Page() {
 	//
 
+	//
+	// A. Transform data
+
 	const isDebug = useMemo(() => {
 		// Exit early if not in a browser environment
 		if (typeof window === 'undefined') return true;
@@ -76,6 +79,9 @@ export default function Page() {
 		//
 	}, []);
 
+	//
+	// B. Handle actions
+
 	useEffect(() => {
 		// Exit early if not in a browser environment
 		if (typeof window === 'undefined') return;
@@ -89,11 +95,14 @@ export default function Page() {
 		//
 	}, [matchedLinkRule, isDebug]);
 
+	//
+	// C. Render components
+
 	return (
 		<>
 			<Loader size="lg" />
-			{isDebug && <p>ID: {matchedLinkRule?._id}</p>}
-			{isDebug && <p>HREF: {matchedLinkRule?.href}</p>}
+			{(isDebug && matchedLinkRule) && <p>ID: {matchedLinkRule._id}</p>}
+			{(isDebug && matchedLinkRule) && <p>HREF: {matchedLinkRule.href}</p>}
 		</>
 	);
 

@@ -8,6 +8,7 @@ email="carrismetropolitana@gmail.com"
 staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
 
 primary_domain=cmet.pt
+secondary_domain=qr.carrismetropolitana.pt
 
 
 # # #
@@ -43,7 +44,7 @@ echo
 
 echo ">>> Requesting Let's Encrypt certificate for "$primary_domain"..."
 if [ $staging != "0" ]; then staging_arg="--staging"; fi # Enable staging mode if needed
-docker compose run --rm --entrypoint "certbot certonly --webroot -w /var/www/certbot $staging_arg -d $primary_domain --email $email --rsa-key-size 4096 --agree-tos --noninteractive --verbose --force-renewal" certbot
+docker compose run --rm --entrypoint "certbot certonly --webroot -w /var/www/certbot $staging_arg -d $primary_domain -d $secondary_domain --email $email --rsa-key-size 4096 --agree-tos --noninteractive --verbose --force-renewal" certbot
 echo
 
 

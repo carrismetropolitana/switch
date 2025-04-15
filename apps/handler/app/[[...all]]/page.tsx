@@ -2,9 +2,18 @@
 
 /* * */
 
-import { Loader } from '@/components/Loader';
-import { LINK_RULES } from '@/LINK_RULES.js';
+import pjson from '@/package.json';
+import { SHORT_LINKS } from '@/SHORT_LINKS.js';
+import { ampli } from 'amplitude';
+import { Loader } from 'components/Loader';
 import { useEffect, useMemo } from 'react';
+
+/* * */
+
+interface MatchedShortLink {
+	_id: string
+	href: string
+}
 
 /* * */
 
@@ -43,28 +52,27 @@ export default function Page() {
 
 	const isDebug = useMemo(() => {
 		// Exit early if not in a browser environment
-		if (typeof window === 'undefined') return false;
+		if (typeof window === 'undefined') return true;
 		// Get the URL parameters to check for debug mode
 		const params = new URLSearchParams(window.location.search);
 		// Return true if debug mode is enabled
 		return params.get('debug') === 'true' || params.get('debug') === '1';
 	}, []);
 
-	const redirectUrl = useMemo(() => {
+	const matchedLinkRule: MatchedShortLink | undefined = useMemo(() => {
 		// Exit early if not in a browser environment
 		if (typeof window === 'undefined') return;
 		// Get the current window path
 		const currentWindowPath = window.location.pathname;
 		// Iterate over the links and check for matches
-		for (const linkRule of LINK_RULES) {
+		for (const linkRule of SHORT_LINKS) {
 			// Check if the link path matches the current window path
 			const match = matchPath(linkRule.path, currentWindowPath);
 			// If a match is found, replace the parameters in the destination URL
-			// and redirect to the final URL.
-			if (match) return replaceParams(linkRule.destination, match);
+			if (match) return { _id: linkRule._id, href: replaceParams(linkRule.destination, match) };
 		}
 		// If no match is found transparently redirect to the canonical URL
-		return 'https://www.carrismetropolitana.pt' + currentWindowPath;
+		return { _id: 'default', href: 'https://www.carrismetropolitana.pt' + currentWindowPath };
 		//
 	}, []);
 
@@ -72,18 +80,20 @@ export default function Page() {
 		// Exit early if not in a browser environment
 		if (typeof window === 'undefined') return;
 		// Exit early if no redirect data is found
-		if (!redirectUrl || isDebug) return;
+		if (!matchedLinkRule || isDebug) return;
 		// Log the match and final URL for audit purposes
-		/* AMPLITUDE.LOG('link_redirect') */
+		ampli.load({ client: { configuration: { appVersion: pjson.version, autocapture: false } }, environment: 'default' });
+		ampli.shortLinkVisited({ app_version: pjson.version, debug_mode: isDebug, short_link_destination: matchedLinkRule.href, short_link_id: matchedLinkRule._id });
 		// Redirect to the destination URL
-		window.location.href = redirectUrl;
+		window.location.href = matchedLinkRule.href;
 		//
-	}, [redirectUrl]);
+	}, [matchedLinkRule, isDebug]);
 
 	return (
 		<>
 			<Loader size="lg" />
-			{isDebug && <p>{redirectUrl}</p>}
+			{isDebug && <p>ID: {matchedLinkRule?._id}</p>}
+			{isDebug && <p>HREF: {matchedLinkRule?.href}</p>}
 		</>
 	);
 

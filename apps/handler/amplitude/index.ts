@@ -57,11 +57,39 @@ export interface IdentifyProperties {
   referring_domain?: string;
 }
 
+export interface ShortLinkVisitedProperties {
+  /**
+   * The version of the application that generated the event.
+   */
+  app_version: string;
+  /**
+   * Captures if something is enabled
+   */
+  debug_mode: boolean;
+  /**
+   * | Rule | Value |
+   * |---|---|
+   * | Regex |  |
+   */
+  short_link_destination: string;
+  short_link_id: string;
+}
+
 export class Identify implements BaseEvent {
   event_type = amplitude.Types.SpecialEventType.IDENTIFY;
 
   constructor(
     public event_properties?: IdentifyProperties,
+  ) {
+    this.event_properties = event_properties;
+  }
+}
+
+export class ShortLinkVisited implements BaseEvent {
+  event_type = 'Short Link Visited';
+
+  constructor(
+    public event_properties: ShortLinkVisitedProperties,
   ) {
     this.event_properties = event_properties;
   }
@@ -184,6 +212,22 @@ export class Ampli {
     return this.amplitude!.track(event, undefined, options);
   }
 
+  /**
+   * Short Link Visited
+   *
+   * [View in Tracking Plan](https://data.eu.amplitude.com/tmlmobilidade/default/events/main/latest/Short%20Link%20Visited)
+   *
+   * Event to track when a short link is visited.
+   *
+   * @param properties The event's properties (e.g. app_version)
+   * @param options Amplitude event options.
+   */
+  shortLinkVisited(
+    properties: ShortLinkVisitedProperties,
+    options?: EventOptions,
+  ) {
+    return this.track(new ShortLinkVisited(properties), options);
+  }
 }
 
 export const ampli = new Ampli();

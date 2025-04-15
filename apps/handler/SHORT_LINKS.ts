@@ -1,4 +1,6 @@
-export const LINK_RULES = Object.freeze([
+/* * */
+
+export const SHORT_LINKS = Object.freeze([
 
 	{
 		_id: '1',

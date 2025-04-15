@@ -20,6 +20,12 @@ export const SHORT_LINKS = Object.freeze([
 	},
 
 	{
+		_id: 'posters',
+		destination: 'https://www.carrismetropolitana.pt/stops/:stop',
+		path: '/posters/:stop',
+	},
+
+	{
 		_id: 'campanha_contactos',
 		destination: 'https://www.carrismetropolitana.pt/news/1234',
 		path: '/campanha-contactos',

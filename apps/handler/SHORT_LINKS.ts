@@ -9,9 +9,9 @@ export const SHORT_LINKS = Object.freeze([
 	},
 
 	{
-		_id: 'test_simple',
-		destination: 'https://www.google.com',
-		path: '/cm',
+		_id: 'horario_pdf',
+		destination: 'https://www.carrismetropolitana.pt/lines/:line',
+		path: '/horarios/:line/:direction/:stop',
 	},
 
 ]);

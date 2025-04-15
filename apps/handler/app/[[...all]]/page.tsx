@@ -61,14 +61,11 @@ export default function Page() {
 			const match = matchPath(linkRule.path, currentWindowPath);
 			// If a match is found, replace the parameters in the destination URL
 			// and redirect to the final URL.
-			if (match) {
-				// Build the final URL by replacing the parameters in the destination URL
-				// with the actual values from the match object
-				return replaceParams(linkRule.destination, match);
-			}
+			if (match) return replaceParams(linkRule.destination, match);
 		}
 		// If no match is found transparently redirect to the canonical URL
 		return 'https://www.carrismetropolitana.pt' + currentWindowPath;
+		//
 	}, []);
 
 	useEffect(() => {
@@ -79,7 +76,7 @@ export default function Page() {
 		// Log the match and final URL for audit purposes
 		/* AMPLITUDE.LOG('link_redirect') */
 		// Redirect to the destination URL
-		// window.location.href = redirectUrl;
+		window.location.href = redirectUrl;
 		//
 	}, [redirectUrl]);
 

@@ -2,8 +2,6 @@
 
 FROM node:slim AS base
 
-ENV PROJECT=handler
-
 RUN npm install -g turbo@^2
 
 # # # # # # # # #
@@ -19,7 +17,7 @@ WORKDIR /app
 COPY package.json ./
 COPY . .
 
-RUN turbo prune --scope=@carrismetropolitana/switch-${PROJECT} --docker
+RUN turbo prune --scope=@carrismetropolitana/switch-handler --docker
 
 
 # # # # # # # # #
@@ -38,7 +36,7 @@ RUN npm install
 
 # Build the project
 COPY --from=pruner /app/out/full/ .
-RUN turbo run build --filter=@carrismetropolitana/switch-${PROJECT}
+RUN turbo run build --filter=@carrismetropolitana/switch-handler
 
 
 # # # # # # # # #
@@ -57,8 +55,8 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 USER nextjs
 
-COPY --from=builder --chown=nextjs:nodejs /app/apps/${PROJECT}/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/apps/${PROJECT}/.next/static ./apps/${PROJECT}/.next/static
-COPY --from=builder --chown=nextjs:nodejs /app/apps/${PROJECT}/public ./apps/${PROJECT}/public
+COPY --from=builder --chown=nextjs:nodejs /app/apps/handler/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/apps/handler/.next/static ./apps/handler/.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/apps/handler/public ./apps/handler/public
 
-CMD ["node", "/app/apps/${PROJECT}/server.js"]
+CMD ["node", "/app/apps/handler/server.js"]

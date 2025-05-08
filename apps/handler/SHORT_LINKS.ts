@@ -7,6 +7,10 @@
 
 export const SHORT_LINKS = Object.freeze([
 
+	/*
+	 * path: 'origem' --> https://cmet.pt/origem
+	 */
+
 	{
 		_id: 'pip',
 		destination: 'https://beta.carrismetropolitana.pt/pip/:id',

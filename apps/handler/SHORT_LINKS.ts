@@ -37,4 +37,10 @@ export const SHORT_LINKS = Object.freeze([
 		path: '/arrabida365',
 	},
 
+	{
+		_id: 'campanha_prioridade',
+		destination: 'https://www.carrismetropolitana.pt',
+		path: '/campanha-prioridade',
+	},
+
 ]);

@@ -47,4 +47,10 @@ export const SHORT_LINKS = Object.freeze([
 		path: '/campanha-prioridade',
 	},
 
+	{
+		_id: 'app_inbus',
+		destination: 'https://www.carrismetropolitana.pt/app',
+		path: '/app-install-cmm',
+	},
+
 ]);

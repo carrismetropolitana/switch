@@ -53,4 +53,10 @@ export const SHORT_LINKS = Object.freeze([
 		path: '/app-install-cmm',
 	},
 
+	{
+		_id: 'spotify',
+		destination: 'https://open.spotify.com/playlist/2wFT6kk4MMT3jV32YAhkju',
+		path: '/spotify',
+	},
+
 ]);

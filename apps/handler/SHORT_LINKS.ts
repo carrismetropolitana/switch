@@ -59,4 +59,10 @@ export const SHORT_LINKS = Object.freeze([
 		path: '/spotify',
 	},
 
+	{
+		_id: 'urban-vind-instructions',
+		destination: 'https://bit.ly/cfx-install',
+		path: '/urban-vind',
+	},
+
 ]);

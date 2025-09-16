@@ -71,4 +71,10 @@ export const SHORT_LINKS = Object.freeze([
 		path: '/urban-vind',
 	},
 
+	{
+		_id: 'maratona_loures',
+		destination: 'https://carrismetropolitana.pt/news',
+		path: '/maratona-loures',
+	},
+
 ]);

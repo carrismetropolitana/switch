@@ -5,7 +5,7 @@
 		"esModuleInterop": true,
 		"incremental": true,
 		"isolatedModules": true,
-		"jsx": "preserve",
+		"jsx": "react-jsx",
 		"lib": [
 			"dom",
 			"dom.iterable",
@@ -39,7 +39,8 @@
 		"next-env.d.ts",
 		".next/types/**/*.ts",
 		"**/*.ts",
-		"**/*.tsx"
+		"**/*.tsx",
+		".next/dev/types/**/*.ts"
 	],
 	"exclude": [
 		"**/node_modules",

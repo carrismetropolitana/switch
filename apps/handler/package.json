@@ -10,21 +10,21 @@
 		"start": "next start"
 	},
 	"dependencies": {
-		"@amplitude/analytics-browser": "2.13.3",
-		"@tabler/icons-react": "3.31.0",
-		"next": "15.3.0",
-		"react": "19.1.0",
-		"react-dom": "19.1.0"
+		"@amplitude/analytics-browser": "2.31.3",
+		"@tabler/icons-react": "3.35.0",
+		"next": "16.0.7",
+		"react": "19.2.1",
+		"react-dom": "19.2.1"
 	},
 	"devDependencies": {
 		"@carrismetropolitana/eslint": "20250325.1926.5",
-		"@types/node": "22.14.1",
-		"@types/react": "19.1.2",
-		"@types/react-dom": "19.1.2",
-		"typescript": "5.8.3"
+		"@types/node": "24.10.1",
+		"@types/react": "19.2.7",
+		"@types/react-dom": "19.2.3",
+		"typescript": "5.9.3"
 	},
 	"overrides": {
-		"react": "19.1.0",
-		"react-dom": "19.1.0"
+		"react": "19.2.1",
+		"react-dom": "19.2.1"
 	}
 }

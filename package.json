@@ -9,13 +9,13 @@
 	},
 	"devDependencies": {
 		"@carrismetropolitana/eslint": "20250325.1926.5",
-		"turbo": "2.5.0",
-		"typescript": "5.8.3"
+		"turbo": "2.6.2",
+		"typescript": "5.9.3"
 	},
 	"workspaces": [
 		"apps/*"
 	],
-	"packageManager": "npm@11.3.0",
+	"packageManager": "npm@11.6.4",
 	"engines": {
 		"node": ">=18"
 	}

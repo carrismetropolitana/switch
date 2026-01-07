@@ -77,4 +77,9 @@ export const SHORT_LINKS = Object.freeze([
 		path: '/maratona-loures',
 	},
 
+	{
+		_id: 'quiz_emoji',
+		destination: 'https://carrismetropolitana.pt/quiz',
+		path: '/quiz',
+	},
 ]);

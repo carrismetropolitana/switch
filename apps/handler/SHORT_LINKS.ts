@@ -1,14 +1,38 @@
 /* * */
 
-/* QR CODE GENERATOR: */
-/* https://qrplanet.com/qr-code-generator-svg */
-
 /* * */
 
 export const SHORT_LINKS = Object.freeze([
 
-	/*
-	 * path: 'origem' --> https://cmet.pt/origem
+	/**
+	 * INSTRUÇÕES:
+	 * É necessário definir um ID único para cada short-link (tipo ID da campanha).
+	 * Este é o ID que irá aparecer nas analíticas do site.
+	 * O campo 'destination' é o URL completo de destino. Pode ser qualquer URL, interno ou externo.
+	 * O campo 'path' é o sufixo que será adicionado ao domínio cmet.pt, e será esse o URL a colocar no QR Code.
+	 *
+	 * Exemplo:
+	 * {
+	 *   _id: 'alteracoes-rede-loures',
+	 *   destination: 'https://um-link-qualquer.com/etc-etc',
+	 *   path: '/loures', --> https://cmet.pt/loures (este é o URL a colocar no QR Code)
+	 * }
+	 *
+	 * Quem aceder a "https://cmet.pt/loures" será automaticamente redirecionado para "https://um-link-qualquer.com/etc-etc",
+	 * e o contador de visitas para o ID 'alteracoes-rede-loures' será incrementado nos relatórios de analíticas.
+	 */
+
+	/**
+	 * QR CODE GENERATOR:
+	 * Este site é recomendado para gerar QR Codes
+	 * a partir dos URLs curtos criados:
+	 *
+	 * => https://qrplanet.com/qr-code-generator-svg
+	 *
+	 * Para utlizações digitais, o "Level L" é suficiente (alto nível de correção de erros).
+	 * Para impressão, recomenda-se o "Level H" (muito alto nível de correção de erros).
+	 * A correção de erros é importante para garantir que o QR Code permanece legível
+	 * mesmo que parte do código fique danificada ou tapada
 	 */
 
 	{

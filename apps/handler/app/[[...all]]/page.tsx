@@ -83,16 +83,27 @@ export default function Page() {
 	// B. Handle actions
 
 	useEffect(() => {
+		(async () => {
 		// Exit early if not in a browser environment
-		if (typeof window === 'undefined') return;
-		// Exit early if no redirect data is found
-		if (!matchedLinkRule) return;
-		// Log the match and final URL for audit purposes
-		ampli.load({ client: { configuration: { appVersion: pjson.version, autocapture: false } }, environment: 'default' });
-		ampli.shortLinkVisited({ app_version: pjson.version, debug_mode: isDebug, short_link_destination: matchedLinkRule.href, short_link_id: matchedLinkRule._id });
-		// Redirect to the destination URL if debug mode is not enabled
-		if (!isDebug) window.location.href = matchedLinkRule.href;
-		//
+			if (typeof window === 'undefined') return;
+			// Exit early if no redirect data is found
+			if (!matchedLinkRule) return;
+			// Log the match and final URL for audit purposes
+			ampli.load({ client: { configuration: { appVersion: pjson.version, autocapture: false } }, environment: 'default' });
+			ampli.shortLinkVisited({ app_version: pjson.version, debug_mode: isDebug, short_link_destination: matchedLinkRule.href, short_link_id: matchedLinkRule._id });
+			await fetch('https://stats.carrismetropolitana.pt/collector/switch', {
+				body: JSON.stringify({
+					app_version: pjson.version,
+					debug_mode: isDebug,
+					short_link_destination: matchedLinkRule.href,
+					short_link_id: matchedLinkRule._id,
+				}),
+				headers: { 'Content-Type': 'application/json' },
+				method: 'POST',
+			});
+			// Redirect to the destination URL if debug mode is not enabled
+			if (!isDebug) window.location.href = matchedLinkRule.href;
+		})();
 	}, [matchedLinkRule, isDebug]);
 
 	//

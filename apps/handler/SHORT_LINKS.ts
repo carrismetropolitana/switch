@@ -108,8 +108,8 @@ export const SHORT_LINKS = Object.freeze([
 	},
 
 	{
-		_id: 'retroespectiva-2025',
-		destination: 'https://carrismetropolitana.pt/restroespectiva-2025',
-		path: '/retroespectiva-2025',
+		_id: 'retrospectiva-2025',
+		destination: 'https://carrismetropolitana.pt/restrospectiva-2025',
+		path: '/retrospectiva-2025',
 	},
 ]);

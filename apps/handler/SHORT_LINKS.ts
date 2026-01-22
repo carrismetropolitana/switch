@@ -109,7 +109,7 @@ export const SHORT_LINKS = Object.freeze([
 
 	{
 		_id: 'retrospectiva-2025',
-		destination: 'https://carrismetropolitana.pt/restrospectiva-2025',
+		destination: 'https://carrismetropolitana.pt/retrospectiva-2025',
 		path: '/retrospectiva-2025',
 	},
 ]);

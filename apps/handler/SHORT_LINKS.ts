@@ -112,4 +112,11 @@ export const SHORT_LINKS = Object.freeze([
 		destination: 'https://carrismetropolitana.pt/retrospectiva-2025',
 		path: '/retrospectiva-2025',
 	},
+
+		{
+		_id: 'inquérito_2025',
+		destination: 'https://carrismetropolitana.pt/news/69a1bfeee9e5c8e4f65a05b2',
+		path: '/inquerito-2025',
+	},
+	
 ]);

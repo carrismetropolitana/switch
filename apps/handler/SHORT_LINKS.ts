@@ -119,4 +119,10 @@ export const SHORT_LINKS = Object.freeze([
 		path: '/resultados-inquerito-2025',
 	},
 	
+	{
+		_id: 'Tap&Ride',
+		destination: 'https://https://carrismetropolitana.pt/news/Tap-and-Ride',
+		path: '/tap-and-ride',
+	},
+	
 ]);

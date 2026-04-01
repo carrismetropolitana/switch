@@ -121,7 +121,7 @@ export const SHORT_LINKS = Object.freeze([
 	
 	{
 		_id: 'Tap&Ride',
-		destination: 'https://carrismetropolitana.pt/news/Tap-and-Ride',
+		destination: 'https://carrismetropolitana.pt/Tap-and-Ride',
 		path: '/tap-and-ride',
 	},
 

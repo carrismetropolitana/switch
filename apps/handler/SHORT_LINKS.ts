@@ -125,4 +125,28 @@ export const SHORT_LINKS = Object.freeze([
 		path: '/tap-and-ride',
 	},
 
+	{
+		_id: 'Whatsapp_area1',
+		destination: 'https://www.whatsapp.com/channel/0029Va9z9d2JP2184daqbX0K',
+		path: '/whatsapp-area1',
+	},
+
+	{
+		_id: 'Whatsapp_area2',
+		destination: 'https://www.whatsapp.com/channel/0029Va9z9d2JP2184daqbX0K',
+		path: '/whatsapp-area2',
+	},
+
+	{
+		_id: 'Whatsapp_area3',
+		destination: 'https://www.whatsapp.com/channel/0029Va9z9d2JP2184daqbX0K',
+		path: '/whatsapp-area3',
+	},
+
+	{
+		_id: 'Whatsapp_area4',
+		destination: 'https://www.whatsapp.com/channel/0029Va9z9d2JP2184daqbX0K',
+		path: '/whatsapp-area4',
+	},
+
 ]);

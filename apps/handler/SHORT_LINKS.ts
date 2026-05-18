@@ -127,25 +127,25 @@ export const SHORT_LINKS = Object.freeze([
 
 	{
 		_id: 'Whatsapp_area1',
-		destination: 'https://www.whatsapp.com/channel/0029Va9z9d2JP2184daqbX0K',
+		destination: 'https://whatsapp.com/channel/0029Vb7jKOPCHDyukrsnCZ0Q',
 		path: '/whatsapp-area1',
 	},
 
 	{
 		_id: 'Whatsapp_area2',
-		destination: 'https://www.whatsapp.com/channel/0029Va9z9d2JP2184daqbX0K',
+		destination: 'https://whatsapp.com/channel/0029VbDckS3ATRSwuUveNh1T',
 		path: '/whatsapp-area2',
 	},
 
 	{
 		_id: 'Whatsapp_area3',
-		destination: 'https://www.whatsapp.com/channel/0029Va9z9d2JP2184daqbX0K',
+		destination: 'https://whatsapp.com/channel/0029Vb868PwBVJkxMm6GJq2a',
 		path: '/whatsapp-area3',
 	},
 
 	{
 		_id: 'Whatsapp_area4',
-		destination: 'https://www.whatsapp.com/channel/0029Va9z9d2JP2184daqbX0K',
+		destination: 'https://whatsapp.com/channel/0029VbCXrDD90x2q303e0A36',
 		path: '/whatsapp-area4',
 	},
 

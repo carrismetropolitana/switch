@@ -149,4 +149,10 @@ export const SHORT_LINKS = Object.freeze([
 		path: '/whatsapp-area4',
 	},
 
+	{
+		_id: 'Natal_2026',
+		destination: 'https://www.instagram.com/carrismetropolitana/?hl=en',
+		path: '/natal-2026',
+	},
+
 ]);
